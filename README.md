@@ -49,8 +49,14 @@ cd bolt-car-rental-backend
 
 Make sure you have Docker and Docker Compose installed.
 
+Create an .env file according to the provided .env.example
+
+```sh
+cp .env.example .env.local
+```
+
 ```bash
-docker-compose up -d
+docker compose --env-file .env up --build -d
 ```
 
 This will:
