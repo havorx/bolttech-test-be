@@ -11,7 +11,7 @@ interface MongoDbConfig {
 
 @Injectable()
 export class MongooseConfigService implements MongooseOptionsFactory {
-  constructor(private configService: ConfigService) { }
+  constructor(private configService: ConfigService) {}
 
   createMongooseOptions():
     | Promise<MongooseModuleOptions>

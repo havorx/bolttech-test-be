@@ -7,7 +7,8 @@ import {
 
 @ValidatorConstraint({ name: 'IsAfterStartDate', async: false })
 export class IsAfterStartDateConstraint
-  implements ValidatorConstraintInterface {
+  implements ValidatorConstraintInterface
+{
   validate(endDate: Date, args: ValidationArguments): boolean {
     const obj = args.object as { startDate: string; endDate: string };
 

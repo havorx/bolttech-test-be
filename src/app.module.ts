@@ -24,4 +24,4 @@ import { BookingsModule } from './modules/bookings/bookings.module';
   controllers: [],
   providers: [],
 })
-export class AppModule { }
+export class AppModule {}

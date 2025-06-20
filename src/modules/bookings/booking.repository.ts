@@ -9,7 +9,7 @@ export class BookingRepository {
   constructor(
     @InjectModel(Booking.name)
     private readonly bookingModel: Model<Booking>,
-  ) { }
+  ) {}
 
   async create(
     data: Omit<Booking, 'car'> & { car: string },

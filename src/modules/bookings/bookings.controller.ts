@@ -9,7 +9,7 @@ import { GetBookingResponseDto } from './dto/get-bookings.dto';
 
 @Controller('bookings')
 export class BookingsController {
-  constructor(private readonly bookingsService: BookingsService) { }
+  constructor(private readonly bookingsService: BookingsService) {}
 
   @ApiOperation({ summary: 'Create car booking' })
   @ApiResponse({ type: CreateBookingResponseDto, status: 200 })

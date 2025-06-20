@@ -9,7 +9,7 @@ export class CarsService {
   constructor(
     private readonly carRepository: CarRepository,
     private readonly pricingService: PricingService,
-  ) { }
+  ) {}
 
   async getCars(dto: GetCarsQueryDto) {
     const { startDate, endDate, availableOnly } = dto;

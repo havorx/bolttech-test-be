@@ -10,7 +10,7 @@ export class CarRepository implements OnModuleInit {
   constructor(
     @InjectModel(Car.name)
     private readonly carModel: Model<Car>,
-  ) { }
+  ) {}
 
   async onModuleInit() {
     if (process.env.NODE_ENV !== 'development') {

@@ -5,7 +5,7 @@ import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 
 @Controller('cars')
 export class CarsController {
-  constructor(private readonly carsService: CarsService) { }
+  constructor(private readonly carsService: CarsService) {}
 
   @ApiOperation({ summary: 'Get all cars' })
   @ApiResponse({ type: GetCarsResponseDto, isArray: true, status: 200 })
