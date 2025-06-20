@@ -1,4 +1,4 @@
-import { ApiProperty } from '@nestjs/swagger';
+import { ApiProperty, ApiResponseProperty } from '@nestjs/swagger';
 import { Transform } from 'class-transformer';
 import {
   IsDateString,
@@ -14,13 +14,16 @@ import { addDays, startOfDay } from 'date-fns';
 import { IsAfterStartDateConstraint } from 'src/common/validators/is-end-date-after-start-date-constraint';
 
 export class CreateBookingDto {
+  @ApiProperty()
   @IsString()
   @IsNotEmpty()
   carId: string;
 
+  @ApiProperty()
   @IsEmail()
   email: string;
 
+  @ApiProperty()
   @IsString()
   @IsNotEmpty()
   @Length(6, 20)
@@ -35,6 +38,7 @@ export class CreateBookingDto {
   @IsDateString()
   drivingLicenseExpiry: string;
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsDateString()
   @Transform(({ value }: { value: string }) => new Date(value))
@@ -43,9 +47,18 @@ export class CreateBookingDto {
   })
   startDate: string;
 
+  @ApiProperty()
   @IsNotEmpty()
   @IsDateString()
   @Transform(({ value }: { value: string }): Date => new Date(value))
   @Validate(IsAfterStartDateConstraint)
   endDate: string;
+}
+
+export class CreateBookingResponseDto {
+  @ApiResponseProperty()
+  id: string;
+
+  @ApiResponseProperty()
+  message: string;
 }

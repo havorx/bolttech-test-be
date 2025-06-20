@@ -23,6 +23,9 @@ export class GetCarsQueryDto {
 
 export class GetCarsResponseDto {
   @ApiResponseProperty()
+  id: string;
+
+  @ApiResponseProperty()
   brand: string;
 
   @ApiResponseProperty()
