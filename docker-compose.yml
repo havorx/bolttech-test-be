@@ -1,0 +1,24 @@
+version: '2.0'
+services:
+  car-booking:
+    image: car-booking-be
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    environment:
+      - MONGODB_CONNECTION_STRING=mongodb://localhost:27017
+    depends_on:
+      - car-booking-mongo
+    expose:
+      - '3000'
+    ports:
+      - '3000:3000'
+    container_name: car-booking-be
+
+  car-booking-mongo:
+    container_name: car-booking-mongo
+    image: 'mongo'
+    expose:
+      - '27017'
+    ports:
+      - '27017:27017'
